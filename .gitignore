@@ -1,0 +1,17 @@
+# Файлы конфигурации для venv
+myenv/
+
+# Environment variables and secrets
+.env
+
+
+# IDEs and Editors
+.vscode/
+
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+
+# Streamlit
+.streamlit/secrets.toml
