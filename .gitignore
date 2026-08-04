@@ -15,3 +15,10 @@ myenv/
 
 # Streamlit
 .streamlit/secrets.toml
+
+#Sandbox
+sandbox/
+
+__pycache__/
+*.pyc
+*.log
