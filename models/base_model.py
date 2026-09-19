@@ -36,7 +36,7 @@ class BaseDAO:
 
     def update(self, db: Session, id: int, obj_in: Dict[str, Any]) -> Optional[ModelType]:
         """Обновить запись."""
-        obj = self.get_one(db, id) # Исправлено с self.get на self.get_one
+        obj = self.get_one(db, id) 
         
         if not obj:
             return None

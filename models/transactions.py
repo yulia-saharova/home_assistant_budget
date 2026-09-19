@@ -1,5 +1,5 @@
 from datetime import datetime
-from sqlalchemy import Column, Integer, DateTime, ForeignKey, Text, Numeric, select
+from sqlalchemy import Column, Integer, Date, ForeignKey, String, Numeric, BigInteger, select, func
 from sqlalchemy.orm import relationship, Session
 from typing import List
 from database.base import Base
@@ -8,10 +8,11 @@ from models.base_model import BaseDAO
 class TransactionModel(Base):
     __tablename__ = 'transactions'
 
-    id = Column(Integer, primary_key=True, index=True)
-    date = Column(DateTime, nullable=False, default=datetime.utcnow)
+    id = Column(BigInteger, primary_key=True, index=True)
+    date = Column(Date, nullable=False, default=func.current_date())
     amount = Column(Numeric(10, 2), nullable=False)
-    comment = Column(Text, nullable=True)
+    comment = Column(String(200), nullable=True)
+    type_transaction = Column(String(20), nullable=False)
 
     # Foreign key
     category_id = Column(Integer, ForeignKey('categories.id'), nullable=False)
